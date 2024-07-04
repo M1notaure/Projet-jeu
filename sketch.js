@@ -1,9 +1,28 @@
+let map1 =
+[
+  '            $$$                s ',
+  'g gg   ggg       gggg  gg  g  gg ',
+  'd   $       ggg   dd             ',
+  '    ggg                         p',
+  '               g$$      ggg   ggg',
+  'gg        b   gggg  gg           ',
+  '   $$$  gggg     d       s    ggg',
+  '   ggd  b     d         gg       ',
+  'gggdddggggggggd$$$ggggggggg  gggg',
+  'dddddddddddddddgggddddddddd  $ddd',
+  'ddddddddddddddddddddddddddd  dddd',
+]
+
+
 
 function preload() {
+  hitboxSheet = loadImage('Assets/Orc/Orc/Orc.png')
   enemySheet = loadImage('Assets/Orc/Orc/Orc.png')
   characterSheet = loadImage('Assets/Soldier/Soldier/Soldier.png');
   tilesSheet = loadImage('Assets/sprites/world_tileset.png')
   fontText = loadFont('Assets/fonts/PixelOperator8.ttf')
+  coinSheet = loadImage('Assets/sprites/coin.png')
+  portailSheet = loadImage('Assets/portail.png')
 }
 
 function setup() {
@@ -15,6 +34,20 @@ function setup() {
   // ground.collider = 'static';
   // ground.color = 'brown';
 
+  txt=createDiv('')
+  txt.style('font-size', '75px')
+  txt.position(20, 10)
+  
+  
+  textFont(fontText)
+  
+  portail = new Group()
+  portail.collider = 'static'
+  portail.tile = 'p'
+  portail.spriteSheet = portailSheet
+  portail.width = 32
+  portail.height = 32
+  
   grass = new Group();
   grass.collider = 'static';
   grass.tile = 'g';
@@ -65,15 +98,24 @@ function setup() {
     { w: 16, h: 16, row: 4, col: 8 }
   )
 
+  coins = new Group();
+  coins.collider = 'none';
+  coins.tile = '$';
+  coins.spriteSheet = coinSheet;
+  coins.width = 16
+  coins.height = 16
+  coins.addAni(
+    { w: 16, h: 16, row: 0, frames: 12}
+  )
+
 
   world.gravity.y = 9.81;
   allSprites.pixelPerfect = true;
 
-  goblin = new Sprite(100, 113)
+  goblin = new Sprite(151, 113)
   goblin.width = 10
   goblin.height = 12
-  goblin.collider = 'none'
-  goblin.tile = 'e'
+  goblin.collider = 'dynamic'
   goblin.spriteSheet = enemySheet
   goblin.rotationLock = true
   goblin.addAnis({
@@ -87,8 +129,17 @@ function setup() {
 
   goblin.changeAni('run')
 
-  goblin.velocity.x = 1
-  if(goblin.collides('dirt'))
+
+  goblinHitbox = new Sprite()
+  goblinHitbox.w = 20
+  goblinHitbox.h = 10
+  goblinHitbox.collider = 'none'
+  goblinHitbox.spriteSheet = hitboxSheet
+  goblinHitbox.addAni({
+    texture: {w:100, h: 100, row: 0, col: 6, frames: 1}
+  })
+
+
 
 
 
@@ -121,27 +172,31 @@ function setup() {
   bush.addAni(
     { w: 16, h: 16, row: 5, col: 1 }
   )
+  
 
-
+  // t = black rock
+  // i = ice
+  // * = iced_rock
   // g = grass
   // d = dirt
   // r = rock
   // c = underground_rock
   // s = sign
   // b = bush
+  // $ = coins
   new Tiles(
     [
-      '                               s ',
-      'g gg   ggg       gggg  gg  g  gg ',
-      'd           ggg   dd             ',
-      '    ggg                          ',
-      '               g        ggg   ggg',
-      'gg        b   gggg  gg           ',
-      '        gggg     d       s    ggg',
-      '   ggd  b     d         gg       ',
-      'gggdddggggggggd   ggggggggg  gggg',
-      'dddddddddddddddgggddddddddd  dddd',
-      'ddddddddddddddddddddddddddd  dddd',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
     ],
     0, 0,
     16, 16
@@ -154,13 +209,23 @@ let canJump = true;
 let attack01InProgress = false;
 let attack02InProgress = false;
 let attack03InProgress = false;
+let dir = 0.3
+let waiting = false
+let score = 0
 
 
 
 async function draw() {
   background(51);
 
-
+ txt.html('Score: ' +score)
+ 
+  for (let coin of coins) {
+    if(coin.overlaps(player)) {
+      coin.remove()
+      score = score + 1
+    }
+  }
 
   if (kb.presses('w') && canJump == true) {
     player.velocity.y = - 3;
@@ -171,6 +236,17 @@ async function draw() {
     player.velocity.x = 1;
     player.mirror.x = false
     player.changeAni('run')
+  } else {
+    if(player.ani.name !== 'idle' &&
+       player.ani.name !== 'attack01'&&
+       player.ani.name !== 'attack02'&&
+       player.ani.name !== 'attack03'&&
+       player.ani.name !== 'hurt'&&
+       player.ani.name !== 'dead'
+    )
+    {
+      player.changeAni('idle')
+    }
   }
 
 
@@ -206,13 +282,36 @@ async function draw() {
     attack03InProgress = false
   }
 
-  textFont(fontText)
-  textSize(9)
-  text('X:' + player.x, 10, 20)
-  text('Y:' + player.y, 10, 40)
+  // textFont(fontText)
+  // //textSize(9)
+  // text('X:' + player.x, 10, 20)
+  // text('Y:' + player.y, 10, 40)
 
   camera.x = player.x
   camera.y = player.y
+  goblinHitbox.x = goblin.x
+  goblinHitbox.y = goblin.y
 
 
+  if(goblinHitbox.overlaps(bush) || goblinHitbox.overlaps(dirt)){
+    waiting = true
+    await goblin.changeAni('idle')
+    goblin.ani.frame = 0
+    await goblin.changeAni('idle')
+    goblin.ani.frame = 0
+    await goblin.changeAni('idle')
+    waiting = false
+    goblin.changeAni('run')
+    if(dir == 0.3){
+      dir = -0.3
+      goblin.mirror.x = true
+    } else {
+      dir = 0.3
+      goblin.mirror.x = false
+    }
+  } else {
+    if (waiting == false){
+      goblin.vel.x = dir
+  }
+}
 }
