@@ -53,6 +53,20 @@ let map3 =
   ]
 
 
+  let map4 = [
+  'cccccccccccccccccccccccccccccccccccccccccccccccc',
+  'cccccccccccccccccccccccccccccccccccccccccccccccc',    
+  'cccccccccccccccccccccccccccccccccccccccccccccccc',    
+  'cccccccccccccccccccccccccccccccccccccccccccccccc',    
+  '  cc                                            ',    
+  '  c                                             ',      
+  '                                                ',    
+  'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',    
+  'cccccccccccccccccccccccccccccccccccccccccccccccc'    
+  ]
+
+  
+
 
 function preload() {
   hitboxSheet = loadImage('Assets/Orc/Orc/Orc.png')
@@ -80,6 +94,19 @@ function setup() {
 
 
 
+  BlockOfTheEnd
+  BlockOfTheEnd = new Group()
+  BlockOfTheEnd.collider = 'none'
+  BlockOfTheEnd.tile = '4'
+  BlockOfTheEnd.spriteSheet = tilesSheet
+  BlockOfTheEnd.width = 16
+  BlockOfTheEnd.height = 16
+  BlockOfTheEnd.addAni(
+    { w: 16, h: 16, row: 2, col: 3 }
+  )
+  
+  
+  
   red_mushroom = new Group()
   red_mushroom.collider = 'none'
   red_mushroom.tile = '3'
@@ -110,7 +137,8 @@ function setup() {
   pumpkin.addAni(
     { w: 16, h: 16, row: 8, col: 4 }
   )
-
+  
+  
   fragilized_netheracks = new Group()
   fragilized_netheracks.rotationlock = true
   fragilized_netheracks.collider = 'static'
@@ -339,11 +367,20 @@ let attack03InProgress = false;
 let dir = 0.3
 let waiting = false
 let score = 0
+let carte = 1
 
 
 
 async function draw() {
-  background(51);
+  if (carte = 1){
+    background(0, 198, 224)
+  } else if(carte = 2) {
+    background(0, 31, 184)
+  } else if(carte = 3) {
+    background(219, 0, 0)
+  } else if (carte = 4){
+    background(89, 89, 89)
+  }
 
 
   if (player.dead) {
@@ -357,6 +394,7 @@ async function draw() {
   if (player.overlaps(pumpkin)) {
     player.x = 0
     player.y = 0
+    carte = 2
 
     tiles.remove()
 
@@ -369,10 +407,24 @@ async function draw() {
   if (player.overlaps(blue_potion)) {
     player.x = 16
     player.y = -10
+    carte = 3
 
     tiles.remove()
 
     tiles = new Tiles(map3,
+      0, 0,
+      16, 16
+    )
+  }
+
+  if (player.overlaps(red_mushroom)) {
+    player.x = 0
+    player.y = 0
+    carte = 4
+
+    tiles.remove()
+
+    tiles = new Tiles(map4,
       0, 0,
       16, 16
     )
