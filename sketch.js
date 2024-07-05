@@ -1,56 +1,56 @@
 let map1 =
-[
-  '            $$$                  ',
-  'g gg   ggg       gggg  gg  g  gg ',
-  'd   $       ggg   dd             ',
-  '    ggg                         1',
-  '               g$$      ggg   ggg',
-  'gg        b   gggg  gg           ',
-  '   $$$  gggg     d            ggg',
-  '   ggd  b     d         gg       ',
-  'gggdddggggggggd$$$ggggggggg  gggg',
-  'dddddddddddddddgggddddddddd  $ddd',
-  'ddddddddddddddddddddddddddd  dddd',
-]
+  [
+    '            $$$                  ',
+    'g gg   ggg       gggg  gg  g  gg ',
+    'd   $       ggg   dd             ',
+    '    ggg                         1',
+    '               g$$      ggg   ggg',
+    'gg        b   gggg  gg           ',
+    '   $$$  gggg     d            ggg',
+    '   ggg  b     d         gg       ',
+    'gggdddggggggggd$$$ggggggggg  gggg',
+    'dddddddddddddddgggddddddddd  $ddd',
+    'ddddddddddddddddddddddddddd  dddd',
+  ]
 
 let map2 =
-[
-  '                               ******',
-  '                               *$$$$*',
-  '****  *****iiiiiiiiii**********B$****',
-  'BBBB   BBBBBBBBBBBBBBBBBBBBBBBBB$BBBB',
-  'BBBBB          BBBBBBBBBBBBBBBBB$BBBB',
-  'BBBB   iiiiiii BBBBBBBBBBBBBBBBB$BBBB',
-  'BB   BBBBBBBBB BBBBBBBBBBBBBBBBB$BBBB',
-  'BBBB BBBBBBBBB BBBBBBBBBBBBBB$$$$BBBB',
-  'B      BBBBBBB BBBBBBBBBBBB$$$$BBBBBB',
-  'B   BBBBBBBBBB$$$$$$$$$$$$$$$BBBBBBBB',
-  'BBB    2BBBBBB$$$$$$$$$$$BBBBBBBBBBBB',
-  'BBBiiiiiBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',
-]
+  [
+    '                               ******',
+    '                               *$$$$*',
+    '****  *****iiiiiiiiii**********B$****',
+    'BBBB   BBBBBBBBBBBBBBBBBBBBBBBBB$BBBB',
+    'BBBBB          BBBBBBBBBBBBBBBBB$BBBB',
+    'BBBB   iiiiiii BBBBBBBBBBBBBBBBB$BBBB',
+    'BB   BBBBBBBBB BBBBBBBBBBBBBBBBB$BBBB',
+    'BBBB BBBBBBBBB BBBBBBBBBBBBBB$$$$BBBB',
+    'B      BBBBBBB BBBBBBBBBBBB$$$$BBBBBB',
+    'B   BBBBBBBBBB$$$$$$$$$$$$$$$BBBBBBBB',
+    'BBB    2BBBBBB$$$$$$$$$$$BBBBBBBBBBBB',
+    'BBBiiiiiBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',
+  ]
 
 let map3 =
-[
-  '                                                                          ',
-  '                                                                          ', 
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-  '                                                                          ',
-]
+  [
+    'n nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR$$$$$$$$$$RRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR       $$$$$$$$$$RRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRRRRR     RRRRR$$$$$$$$$$           RRRRRRRRRRRRRR',
+    'R RRRRRRRRRRRRRRRRRRRRRRRRR     RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRR                RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRR           RRRRRRRRRRRRRRRRR      3RRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRR RRRRRRRRRRRRRRRRRRRRRRRRRRR RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R RRRRRRRRRRR RRRRRRRRRRRRRRRRRRRRRRRRRRR RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R             RRRRRRRRRRRRRRRRRRRRRRRRRRR RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'R                                         RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'RRRRRRRRRRRRRffffffRRRRRRRRRRRRRRRRRRRRR    RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'RRRRRRRRRRRRR      RRRRRRRRRRRRRRRRRRRRRRR    RRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'RRRRRRRRRRRRR      RRRRRRRRRRRRRRRRRRRRRRRRR                       $RRRRRRR',
+    'RRRRRRRRRRRRR      RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+    'RRRRRRRRRRRRR      RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
+  ]
 
 
 
@@ -73,13 +73,13 @@ function setup() {
   // ground.collider = 'static';
   // ground.color = 'brown';
 
-  txt=createDiv('')
+  txt = createDiv('')
   txt.style('font-size', '75px')
   txt.position(20, 10)
-  
-  
-  
-  
+
+
+
+
   red_mushroom = new Group()
   red_mushroom.collider = 'none'
   red_mushroom.tile = '3'
@@ -87,9 +87,9 @@ function setup() {
   red_mushroom.width = 16
   red_mushroom.height = 16
   red_mushroom.addAni(
-    {w: 16, h: 16, row: 5, col:7}
+    { w: 16, h: 16, row: 5, col: 7 }
   )
-  
+
   blue_potion = new Group()
   blue_potion.collider = 'none'
   blue_potion.tile = '2'
@@ -97,10 +97,10 @@ function setup() {
   blue_potion.width = 10
   blue_potion.height = 16
   blue_potion.addAni(
-    {w: 16, h: 16, row: 8, col:0}
+    { w: 16, h: 16, row: 8, col: 0 }
   )
-  
-  
+
+
   pumpkin = new Group()
   pumpkin.collider = 'static'
   pumpkin.tile = '1'
@@ -108,22 +108,46 @@ function setup() {
   pumpkin.width = 16
   pumpkin.height = 16
   pumpkin.addAni(
-    {w: 16, h: 16, row: 8, col:4}
+    { w: 16, h: 16, row: 8, col: 4 }
   )
-  
+
+  fragilized_netheracks = new Group()
+  fragilized_netheracks.rotationlock = true
+  fragilized_netheracks.collider = 'static'
+  fragilized_netheracks.tile = 'f'
+  fragilized_netheracks.spriteSheet = tilesSheet
+  fragilized_netheracks.width = 16
+  fragilized_netheracks.height = 16
+  fragilized_netheracks.addAni(
+    { w: 16, h: 16, row: 1, col: 5 }
+  )
+
+
+
+
   netherack = new Group()
-  netherack.collider = 'none'
+  netherack.collider = 'static'
   netherack.tile = 'n'
   netherack.spriteSheet = tilesSheet
-  netherack.width = 10
+  netherack.width = 16
   netherack.height = 16
   netherack.addAni(
-    {w: 16, h: 16, row: 0, col:4}
+    { w: 16, h: 16, row: 0, col: 4 }
   )
-  
-  
-  
-  
+
+  red_rock = new Group()
+  red_rock.collider = 'static'
+  red_rock.tile = 'R'
+  red_rock.spriteSheet = tilesSheet
+  red_rock.width = 16
+  red_rock.height = 16
+  red_rock.addAni(
+    { w: 16, h: 16, row: 1, col: 4 }
+  )
+
+
+
+
   grass = new Group();
   grass.collider = 'static';
   grass.tile = 'g';
@@ -182,7 +206,7 @@ function setup() {
   coins.width = 16
   coins.height = 16
   coins.addAni(
-    { w: 16, h: 16, row: 0, frames: 12}
+    { w: 16, h: 16, row: 0, frames: 12 }
   )
 
 
@@ -202,7 +226,7 @@ function setup() {
   ice.spriteSheet = tilesSheet;
   ice.width = 16
   ice.height = 16
-  ice.friction = 0.1
+  ice.friction = 0.01
   ice.addAni(
     { w: 16, h: 16, row: 2, col: 6 }
   )
@@ -227,12 +251,12 @@ function setup() {
   goblin.spriteSheet = enemySheet
   goblin.rotationLock = true
   goblin.addAnis({
-    run: {w: 100, h:100, row:1, frames: 8, frameDelay: 40},
-    idle: {w: 100, h: 100, row:0, frames:6, frameDelay: 25},
+    run: { w: 100, h: 100, row: 1, frames: 8, frameDelay: 40 },
+    idle: { w: 100, h: 100, row: 0, frames: 6, frameDelay: 25 },
     attack01: { w: 100, h: 100, row: 2, frames: 6, frameDelay: 5 },
     attack02: { w: 100, h: 100, row: 3, frames: 6, frameDelay: 10 },
-    hurt: { w: 100, h: 100, row: 4, frames: 4},
-    death: { w: 100, h: 100, row: 5, frames: 4, frameDelay: 25}
+    hurt: { w: 100, h: 100, row: 4, frames: 4 },
+    death: { w: 100, h: 100, row: 5, frames: 4, frameDelay: 25 }
   })
 
   goblin.changeAni('run')
@@ -244,7 +268,7 @@ function setup() {
   goblinHitbox.collider = 'none'
   goblinHitbox.spriteSheet = hitboxSheet
   goblinHitbox.addAni({
-    texture: {w:100, h: 100, row: 0, col: 6, frames: 1}
+    texture: { w: 100, h: 100, row: 0, col: 6, frames: 1 }
   })
 
 
@@ -280,11 +304,11 @@ function setup() {
   bush.addAni(
     { w: 16, h: 16, row: 5, col: 1 }
   )
-  
 
-  
-  
-  
+
+
+
+
   // 3 = red_mushroom
   // 2 = blue_potion
   // 1 = pumpkin
@@ -321,6 +345,15 @@ let score = 0
 async function draw() {
   background(51);
 
+
+  if (player.dead) {
+    gameOver()
+    return
+  }
+
+
+
+
   if (player.overlaps(pumpkin)) {
     player.x = 0
     player.y = 0
@@ -332,13 +365,25 @@ async function draw() {
       16, 16
     )
   }
- 
- 
- 
-  txt.html('Score: ' +score)
- 
+
+  if (player.overlaps(blue_potion)) {
+    player.x = 16
+    player.y = -10
+
+    tiles.remove()
+
+    tiles = new Tiles(map3,
+      0, 0,
+      16, 16
+    )
+  }
+
+
+
+  txt.html('Score: ' + score)
+
   for (let coin of coins) {
-    if(coin.overlaps(player)) {
+    if (coin.overlaps(player)) {
       coin.remove()
       score = score + 1
     }
@@ -354,15 +399,21 @@ async function draw() {
     player.mirror.x = false
     player.changeAni('run')
   } else {
-    if(player.ani.name !== 'idle' &&
-       player.ani.name !== 'attack01'&&
-       player.ani.name !== 'attack02'&&
-       player.ani.name !== 'attack03'&&
-       player.ani.name !== 'hurt'&&
-       player.ani.name !== 'dead'
-    )
-    {
+    if (player.ani.name !== 'idle' &&
+      player.ani.name !== 'attack01' &&
+      player.ani.name !== 'attack02' &&
+      player.ani.name !== 'attack03' &&
+      player.ani.name !== 'hurt' &&
+      player.ani.name !== 'dead'
+    ) {
       player.changeAni('idle')
+    }
+  }
+
+  for (let fragilized_netherack of fragilized_netheracks) {
+    if (player.collides (fragilized_netherack)) {
+      await delay(100)
+      fragilized_netherack.collider = 'dynamic'
     }
   }
 
@@ -403,8 +454,8 @@ async function draw() {
   textSize(8)
   text('X:' + player.x, 10, 20)
   text('Y:' + player.y, 10, 40)
-  
-  
+
+
   // if (player.overlapping(sign)){
   //   textFont(pixelOperator)
   //   textSize(8)  
@@ -416,8 +467,14 @@ async function draw() {
   goblinHitbox.x = goblin.x
   goblinHitbox.y = goblin.y
 
+  if (player.y > 2000) {
+    player.dead = true
+  }
 
-  if(goblinHitbox.overlaps(bush) || goblinHitbox.overlaps(dirt) || goblinHitbox.overlaps(iced_rock)){
+
+  if (goblinHitbox.overlaps(bush) ||
+    goblinHitbox.overlaps(dirt) ||
+    goblinHitbox.overlaps(iced_rock)) {
     waiting = true
     await goblin.changeAni('idle')
     goblin.ani.frame = 0
@@ -426,7 +483,7 @@ async function draw() {
     await goblin.changeAni('idle')
     waiting = false
     goblin.changeAni('run')
-    if(dir == 0.3){
+    if (dir == 0.3) {
       dir = -0.3
       goblin.mirror.x = true
     } else {
@@ -434,8 +491,24 @@ async function draw() {
       goblin.mirror.x = false
     }
   } else {
-    if (waiting == false){
+    if (waiting == false) {
       goblin.vel.x = dir
+    }
   }
 }
+
+
+async function gameOver() {
+  background(20)
+
+  goblin.remove()
+  tiles.remove()
+
+
+  textAlign(CENTER)
+  fill(255)
+  textFont(pixelOperator)
+  textSize(8)
+  text('GAME OVER', canvas.w / 2, canvas.h / 2)
+
 }
