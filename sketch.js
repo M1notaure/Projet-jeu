@@ -1,16 +1,55 @@
 let map1 =
 [
-  '            $$$                s ',
+  '            $$$                  ',
   'g gg   ggg       gggg  gg  g  gg ',
   'd   $       ggg   dd             ',
-  '    ggg                         p',
+  '    ggg                         1',
   '               g$$      ggg   ggg',
   'gg        b   gggg  gg           ',
-  '   $$$  gggg     d       s    ggg',
+  '   $$$  gggg     d            ggg',
   '   ggd  b     d         gg       ',
   'gggdddggggggggd$$$ggggggggg  gggg',
   'dddddddddddddddgggddddddddd  $ddd',
   'ddddddddddddddddddddddddddd  dddd',
+]
+
+let map2 =
+[
+  '                               ******',
+  '                               *$$$$*',
+  '****  *****iiiiiiiiii**********B$****',
+  'BBBB   BBBBBBBBBBBBBBBBBBBBBBBBB$BBBB',
+  'BBBBB          BBBBBBBBBBBBBBBBB$BBBB',
+  'BBBB   iiiiiii BBBBBBBBBBBBBBBBB$BBBB',
+  'BB   BBBBBBBBB BBBBBBBBBBBBBBBBB$BBBB',
+  'BBBB BBBBBBBBB BBBBBBBBBBBBBB$$$$BBBB',
+  'B      BBBBBBB BBBBBBBBBBBB$$$$BBBBBB',
+  'B   BBBBBBBBBB$$$$$$$$$$$$$$$BBBBBBBB',
+  'BBB    2BBBBBB$$$$$$$$$$$BBBBBBBBBBBB',
+  'BBBiiiiiBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',
+]
+
+let map3 =
+[
+  '                                                                          ',
+  '                                                                          ', 
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
+  '                                                                          ',
 ]
 
 
@@ -20,7 +59,7 @@ function preload() {
   enemySheet = loadImage('Assets/Orc/Orc/Orc.png')
   characterSheet = loadImage('Assets/Soldier/Soldier/Soldier.png');
   tilesSheet = loadImage('Assets/sprites/world_tileset.png')
-  fontText = loadFont('Assets/fonts/PixelOperator8.ttf')
+  pixelOperator = loadFont('Assets/fonts/PixelOperator8-Bold.ttf')
   coinSheet = loadImage('Assets/sprites/coin.png')
   portailSheet = loadImage('Assets/portail.png')
 }
@@ -39,14 +78,51 @@ function setup() {
   txt.position(20, 10)
   
   
-  textFont(fontText)
   
-  portail = new Group()
-  portail.collider = 'static'
-  portail.tile = 'p'
-  portail.spriteSheet = portailSheet
-  portail.width = 32
-  portail.height = 32
+  
+  red_mushroom = new Group()
+  red_mushroom.collider = 'none'
+  red_mushroom.tile = '3'
+  red_mushroom.spriteSheet = tilesSheet
+  red_mushroom.width = 16
+  red_mushroom.height = 16
+  red_mushroom.addAni(
+    {w: 16, h: 16, row: 5, col:7}
+  )
+  
+  blue_potion = new Group()
+  blue_potion.collider = 'none'
+  blue_potion.tile = '2'
+  blue_potion.spriteSheet = tilesSheet
+  blue_potion.width = 10
+  blue_potion.height = 16
+  blue_potion.addAni(
+    {w: 16, h: 16, row: 8, col:0}
+  )
+  
+  
+  pumpkin = new Group()
+  pumpkin.collider = 'static'
+  pumpkin.tile = '1'
+  pumpkin.spriteSheet = tilesSheet
+  pumpkin.width = 16
+  pumpkin.height = 16
+  pumpkin.addAni(
+    {w: 16, h: 16, row: 8, col:4}
+  )
+  
+  netherack = new Group()
+  netherack.collider = 'none'
+  netherack.tile = 'n'
+  netherack.spriteSheet = tilesSheet
+  netherack.width = 10
+  netherack.height = 16
+  netherack.addAni(
+    {w: 16, h: 16, row: 0, col:4}
+  )
+  
+  
+  
   
   grass = new Group();
   grass.collider = 'static';
@@ -90,15 +166,16 @@ function setup() {
 
   sign = new Group();
   sign.collider = 'none';
-  sign.tile = 's';
   sign.spriteSheet = tilesSheet;
+  sign.tile = 's'
   sign.width = 16
   sign.height = 16
   sign.addAni(
-    { w: 16, h: 16, row: 4, col: 8 }
+    { w: 16, h: 16, row: 3, col: 8 }
   )
+  sign.debug = true
 
-  coins = new Group();
+  coins = new Group()
   coins.collider = 'none';
   coins.tile = '$';
   coins.spriteSheet = coinSheet;
@@ -109,8 +186,39 @@ function setup() {
   )
 
 
+  iced_rock = new Group();
+  iced_rock.collider = 'static';
+  iced_rock.tile = '*';
+  iced_rock.spriteSheet = tilesSheet;
+  iced_rock.width = 16
+  iced_rock.height = 16
+  iced_rock.addAni(
+    { w: 16, h: 16, row: 0, col: 6 }
+  )
+
+  ice = new Group();
+  ice.collider = 'static';
+  ice.tile = 'i';
+  ice.spriteSheet = tilesSheet;
+  ice.width = 16
+  ice.height = 16
+  ice.friction = 0.1
+  ice.addAni(
+    { w: 16, h: 16, row: 2, col: 6 }
+  )
+
+  black_rock = new Group();
+  black_rock.collider = 'static';
+  black_rock.tile = 'B';
+  black_rock.spriteSheet = tilesSheet;
+  black_rock.width = 16
+  black_rock.height = 16
+  black_rock.addAni(
+    { w: 16, h: 16, row: 1, col: 6 }
+  )
+
   world.gravity.y = 9.81;
-  allSprites.pixelPerfect = true;
+  allSprites.pixelPerfect = true
 
   goblin = new Sprite(151, 113)
   goblin.width = 10
@@ -174,7 +282,15 @@ function setup() {
   )
   
 
-  // t = black rock
+  
+  
+  
+  // 3 = red_mushroom
+  // 2 = blue_potion
+  // 1 = pumpkin
+  // n = netherack
+  // R = red_rock
+  // B = black_rock
   // i = ice
   // * = iced_rock
   // g = grass
@@ -184,20 +300,7 @@ function setup() {
   // s = sign
   // b = bush
   // $ = coins
-  new Tiles(
-    [
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-    ],
+  tiles = new Tiles(map1,
     0, 0,
     16, 16
   )
@@ -218,7 +321,21 @@ let score = 0
 async function draw() {
   background(51);
 
- txt.html('Score: ' +score)
+  if (player.overlaps(pumpkin)) {
+    player.x = 0
+    player.y = 0
+
+    tiles.remove()
+
+    tiles = new Tiles(map2,
+      0, 0,
+      16, 16
+    )
+  }
+ 
+ 
+ 
+  txt.html('Score: ' +score)
  
   for (let coin of coins) {
     if(coin.overlaps(player)) {
@@ -260,7 +377,7 @@ async function draw() {
     player.changeAni('idle')
   }
 
-  if (player.collides(grass)) {
+  if (player.collides(tiles)) {
     canJump = true
   }
   if (kb.presses('e') && attack01InProgress == false) {
@@ -282,18 +399,25 @@ async function draw() {
     attack03InProgress = false
   }
 
-  // textFont(fontText)
-  // //textSize(9)
-  // text('X:' + player.x, 10, 20)
-  // text('Y:' + player.y, 10, 40)
-
+  textFont(pixelOperator)
+  textSize(8)
+  text('X:' + player.x, 10, 20)
+  text('Y:' + player.y, 10, 40)
+  
+  
+  // if (player.overlapping(sign)){
+  //   textFont(pixelOperator)
+  //   textSize(8)  
+  //   text('La glace glisse...', canvas.hw, canvas.hh - 16)
+  //   console.log ('overlapping')
+  //  }
   camera.x = player.x
   camera.y = player.y
   goblinHitbox.x = goblin.x
   goblinHitbox.y = goblin.y
 
 
-  if(goblinHitbox.overlaps(bush) || goblinHitbox.overlaps(dirt)){
+  if(goblinHitbox.overlaps(bush) || goblinHitbox.overlaps(dirt) || goblinHitbox.overlaps(iced_rock)){
     waiting = true
     await goblin.changeAni('idle')
     goblin.ani.frame = 0
