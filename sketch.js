@@ -65,7 +65,7 @@ let map3 =
   'cccccccccccccccccccccccccccccccccccccccccccccccc'    
   ]
 
-  
+
 
 
 function preload() {
@@ -94,7 +94,6 @@ function setup() {
 
 
 
-  BlockOfTheEnd
   BlockOfTheEnd = new Group()
   BlockOfTheEnd.collider = 'none'
   BlockOfTheEnd.tile = '4'
@@ -372,13 +371,13 @@ let carte = 1
 
 
 async function draw() {
-  if (carte = 1){
+  if (carte == 1){
     background(0, 198, 224)
-  } else if(carte = 2) {
+  } else if(carte == 2) {
     background(0, 31, 184)
-  } else if(carte = 3) {
+  } else if(carte == 3) {
     background(219, 0, 0)
-  } else if (carte = 4){
+  } else if (carte == 4){
     background(89, 89, 89)
   }
 
@@ -502,10 +501,10 @@ async function draw() {
     attack03InProgress = false
   }
 
-  textFont(pixelOperator)
-  textSize(8)
-  text('X:' + player.x, 10, 20)
-  text('Y:' + player.y, 10, 40)
+  // textFont(pixelOperator)
+  // textSize(8)
+  // text('X:' + player.x, 10, 20)
+  // text('Y:' + player.y, 10, 40)
 
 
   // if (player.overlapping(sign)){
