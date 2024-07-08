@@ -92,8 +92,19 @@ function setup() {
   txt.position(20, 10)
 
 
+  hitbox_attack01 = new sprite()
+  hitbox_attack01.collider = 'none'
+  hitbox_attack01.spriteSheet = characterSheet
+  hitbox_attack01.width = 16
+  hitbox_attack01.height = 16
+  hitbox_attack01.addAni(
+    { w: 16, h: 16, row: 2, col: 3 }
+  )
 
 
+  
+  
+  
   BlockOfTheEnd = new Group()
   BlockOfTheEnd.collider = 'none'
   BlockOfTheEnd.tile = '4'
