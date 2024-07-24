@@ -92,7 +92,7 @@ function setup() {
   txt.position(20, 10)
 
 
-  hitbox_attack01 = new sprite()
+  hitbox_attack01 = new Sprite()
   hitbox_attack01.collider = 'none'
   hitbox_attack01.spriteSheet = characterSheet
   hitbox_attack01.width = 16
@@ -343,7 +343,15 @@ function setup() {
     { w: 16, h: 16, row: 5, col: 1 }
   )
 
-
+  attack01_hitbox = new Sprite(player.x, player.y)
+  attack01_hitbox.width = 12
+  attack01_hitbox.height = 12
+  attack01_hitbox.rotationLock = true
+  attack01_hitbox.spriteSheet = hitboxSheet
+  attack01_hitbox.addAni({
+    texture : { w: 100, h: 100, row: 0, col: 6, frames: 1 }
+  })
+  attack01_hitbox.debug = true
 
 
 
@@ -528,6 +536,8 @@ async function draw() {
   camera.y = player.y
   goblinHitbox.x = goblin.x
   goblinHitbox.y = goblin.y
+  attack01_hitbox.x = player.x
+  attack01_hitbox.y = player.y
 
   if (player.y > 2000) {
     player.dead = true
